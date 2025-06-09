@@ -1,9 +1,15 @@
-#### POST URL:
-```
-http://127.0.0.1:5005/predict
-```
+### Создание модели 
+Что бы сформировать файл модели выполните блокнот `notebooks\model.ipynb`. Файл модели запишется в `service/models/log_reg.joblib`.
 
-#### Data json
+### Запуск сервиса в Docker
+cd service
+docker build -t heart_service .
+docker run --rm --name heart_service -p 5005:5005 heart_service
+
+
+### Обращение к сервису:
+Сервис доступен по адресу `http://127.0.0.1:5005/predict`. Принимает POST запрос с содержимым:
+
 ````
 {
     "age": 40.0,
