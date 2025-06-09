@@ -2,9 +2,11 @@
 Что бы сформировать файл модели выполните блокнот `notebooks\model.ipynb`. Файл модели запишется в `service/models/log_reg.joblib`.
 
 ### Запуск сервиса в Docker
+```
 cd service
 docker build -t heart_service .
 docker run --rm --name heart_service -p 5005:5005 heart_service
+```
 
 
 ### Обращение к сервису:
